@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Adiba ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at 50% 15%, #54236f 0%, #21102f 40%, #08030d 100%);
+
+    color:white;
+}
+
+
+/* ================= STARS ================= */
+
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+
+    animation:twinkle 2s infinite alternate;
+}
+
+.star:nth-child(1){top:8%;left:12%}
+.star:nth-child(2){top:18%;left:30%;animation-delay:.4s}
+.star:nth-child(3){top:12%;left:70%;animation-delay:.8s}
+.star:nth-child(4){top:30%;left:85%;animation-delay:1.2s}
+.star:nth-child(5){top:42%;left:15%;animation-delay:.7s}
+.star:nth-child(6){top:60%;left:80%;animation-delay:1.5s}
+.star:nth-child(7){top:75%;left:20%;animation-delay:.3s}
+.star:nth-child(8){top:82%;left:70%;animation-delay:1s}
+.star:nth-child(9){top:52%;left:50%;animation-delay:1.7s}
+.star:nth-child(10){top:25%;left:55%;animation-delay:.6s}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.15;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}
+
+
+/* ================= MOON ================= */
+
+.moon{
+
+    position:fixed;
+
+    top:6%;
+    right:9%;
+
+    width:85px;
+    height:85px;
+
+    background:#fff6cf;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 25px #fff5bd,
+        0 0 70px rgba(255,240,180,.25);
+
+}
+
+
+/* ================= PAGES ================= */
+
+.page{
+
+    display:none;
+
+    width:100%;
+    height:100vh;
+
+    padding:25px;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+.page.active{
+
+    display:flex;
+
+    animation:pageIn 1s ease;
+
+}
+
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+
+    width:min(92%,650px);
+
+    padding:45px 30px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 0 50px rgba(186,70,255,.12),
+        inset 0 0 30px rgba(255,255,255,.02);
+
+}
+
+
+.small{
+
+    color:#d8b7f0;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
+}
+
+
+h1{
+
+    font-size:clamp(40px,9vw,70px);
+
+    color:#ffd5e5;
+
+    text-shadow:
+        0 0 15px #ff4f91,
+        0 0 35px rgba(255,79,145,.4);
+
+    margin-bottom:20px;
+
+}
+
+
+h2{
+
+    font-size:clamp(27px,6vw,45px);
+
+    color:#ffc4db;
+
+    margin-bottom:25px;
+
+}
+
+
+p{
+
+    font-size:19px;
+
+    line-height:2;
+
+    color:#eee3f2;
+
+    margin-bottom:30px;
+
+}
+
+
+.highlight{
+
+    color:#ff9fc5;
+
+    font-size:23px;
+
+}
+
+
+/* ================= BUTTON ================= */
+
+button{
+
+    border:none;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(135deg,#ff4f91,#9d3cff);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(255,0,120,.25);
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+        0 10px 35px rgba(255,0,120,.5);
+
+}
+
+
+/* ================= EMOJI ================= */
+
+.emoji{
+
+    font-size:75px;
+
+    margin-bottom:15px;
+
+}
+
+
+.heartbeat{
+
+    animation:heartbeat 1.5s infinite;
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    font-size:22px;
+
+    opacity:0;
+
+    animation:floatHeart 7s linear infinite;
+
+}
+
+.h1{left:10%;animation-delay:1s}
+.h2{left:28%;animation-delay:3s}
+.h3{left:50%;animation-delay:5s}
+.h4{left:72%;animation-delay:2s}
+.h5{left:88%;animation-delay:4s}
+
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) scale(.5);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.5);
+        opacity:0;
+    }
+
+}
+
+
+/* ================= PAGE NUMBER ================= */
+
+.number{
+
+    position:fixed;
+
+    bottom:15px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#bda9c8;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+}
+
+
+/* ================= FINAL ================= */
+
+.finalHeart{
+
+    font-size:90px;
+
+    animation:heartbeat 1.5s infinite;
+
+}
+
+.signature{
+
+    margin-top:25px;
+
+    font-style:italic;
+
+    color:#d7b3ed;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- STARS -->
+
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+<div class="star"></div>
+
+
+<div class="moon"></div>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💗</div>
+<div class="heart h3">💕</div>
+<div class="heart h4">💖</div>
+<div class="heart h5">❤️</div>
+
+
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<div class="emoji heartbeat">
+❤️
+</div>
+
+<div class="small">
+HEY ADIBA...
+</div>
+
+<h1>একটা কথা বলি?</h1>
+
+<p>
+
+তুমি তো জানোই...
+<br>
+
+আমি তোমাকে ভালোবাসি। ❤️
+
+<br><br>
+
+তাই আজ নতুন করে
+<br>
+“আমি তোমাকে ভালোবাসি”
+বলতে আসিনি।
+
+<br><br>
+
+আজ একটু অন্যরকম কিছু বলতে চাই।
+
+</p>
+
+<button onclick="nextPage()">
+শুনবে? 🌙
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<div class="emoji">
+🥺
+</div>
+
+<div class="small">
+SOMETHING I NEVER SAID
+</div>
+
+<h2>তুমি জানো...</h2>
+
+<p>
+
+তুমি আমার ভালোবাসার মানুষ,
+<br>
+এটা তুমি জানো।
+
+<br><br>
+
+কিন্তু তুমি কি জানো,
+<br>
+
+<strong class="highlight">
+তুমি আমার সবচেয়ে প্রিয় অভ্যাসগুলোর
+একটা হয়ে গেছো?
+</strong>
+
+<br><br>
+
+তোমার সাথে কথা না হলে
+দিনটা কেমন যেন অসম্পূর্ণ লাগে।
+
+</p>
+
+<button onclick="nextPage()">
+তারপর? 💕
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page" id="page3">
+
+<div class="card">
+
+<div class="emoji">
+🌸
+</div>
+
+<h2>তোমার একটা জিনিস খুব ভালো লাগে</h2>
+
+<p>
+
+তুমি যখন হাসো...
+
+<br><br>
+
+তখন হয়তো তুমি জানোও না
+<br>
+কিন্তু তোমাকে দেখে
+<br>
+আমারও হাসি চলে আসে।
+
+<br><br>
+
+কখনো কখনো ভাবি,
+<br>
+
+<strong class="highlight">
+একজন মানুষ কীভাবে
+কারও একটা সাধারণ দিনকেও
+এত সুন্দর করে দিতে পারে?
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+আরেকটা আছে... 🌷
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page" id="page4">
+
+<div class="card">
+
+<div class="emoji">
+🌙
+</div>
+
+<div class="small">
+ONE LITTLE DREAM
+</div>
+
+<h2>আমার একটা ছোট্ট ইচ্ছে আছে...</h2>
+
+<p>
+
+একদিন এমন একটা রাত হোক—
+
+<br><br>
+
+আকাশে চাঁদ থাকবে,
+<br>
+চারপাশে শান্ত পরিবেশ থাকবে,
+
+<br><br>
+
+আর আমি তোমার পাশে বসে
+<br>
+কোনো কারণ ছাড়াই
+<br>
+তোমার সাথে গল্প করবো।
+
+<br><br>
+
+<strong class="highlight">
+শুধু তুমি আর আমি।
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+স্বপ্নটা শুনবে? 🌙
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page" id="page5">
+
+<div class="card">
+
+<div class="emoji">
+🌹
+</div>
+
+<h2>আমি Perfect কিছু চাই না</h2>
+
+<p>
+
+আমি চাই না
+<br>
+আমাদের সব দিন perfect হোক।
+
+<br><br>
+
+কখনো তুমি রাগ করবে,
+<br>
+কখনো আমি অভিমান করবো।
+
+<br><br>
+
+কখনো হয়তো কথা কম হবে...
+
+<br><br>
+
+কিন্তু দিন শেষে
+<br>
+
+<strong class="highlight">
+আমরা যেন একে অপরকে
+হারিয়ে না ফেলি।
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+আরও একটু... ❤️
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 6 ================= -->
+
+<section class="page" id="page6">
+
+<div class="card">
+
+<div class="emoji">
+💗
+</div>
+
+<h2>তোমার কাছে আমার চাওয়া</h2>
+
+<p>
+
+আমাকে প্রতিদিন
+ভালোবাসতেই হবে—
+এমন কোনো কথা নেই।
+
+<br><br>
+
+শুধু যখন মন খারাপ হবে,
+<br>
+আমাকে বলো।
+
+<br><br>
+
+যখন রাগ হবে,
+<br>
+আমাকে বলো।
+
+<br><br>
+
+যখন খুব ভালো লাগবে,
+<br>
+সেটাও আমাকে বলো।
+
+<br><br>
+
+<strong class="highlight">
+তোমার জীবনের ছোট ছোট
+মুহূর্তগুলোর একজন হতে চাই।
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+শেষের কথাটা... 🥺
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 7 ================= -->
+
+<section class="page" id="page7">
+
+<div class="card">
+
+<div class="emoji heartbeat">
+❤️
+</div>
+
+<div class="small">
+SO... ADIBA
+</div>
+
+<h2>তুমি তো জানো আমি তোমাকে ভালোবাসি...</h2>
+
+<p>
+
+তাই আজ তোমাকে
+ভালোবাসার কথা বলছি না।
+
+<br><br>
+
+আজ শুধু একটা প্রশ্ন করছি—
+
+<br><br>
+
+<strong class="highlight">
+তুমি কি আমার সাথে
+এই ভালোবাসাটাকে
+আরও একটু সুন্দর করে
+বাঁচতে চাও?
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+আমার শেষ কথাটা শুনবে? 🌹
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 8 ================= -->
+
+<section class="page" id="page8">
+
+<div class="card">
+
+<div class="emoji">
+🌹
+</div>
+
+<div class="small">
+JUST FOR YOU
+</div>
+
+<h1>Adiba ❤️</h1>
+
+<h2>একটা ছোট্ট প্রশ্ন...</h2>
+
+<p>
+
+আমি তোমাকে পেয়েছি কিনা
+জানি না...
+
+<br><br>
+
+কিন্তু তোমাকে হারাতে চাই না।
+
+<br><br>
+
+তাই যদি কখনো আমাকে জিজ্ঞেস করো—
+
+<br>
+
+<strong class="highlight">
+“তুমি আমার কাছে কী চাও?”
+</strong>
+
+<br><br>
+
+আমার উত্তর খুব সহজ হবে...
+
+<br><br>
+
+<strong class="highlight">
+“শুধু তুমি।” ❤️
+</strong>
+
+</p>
+
+<button onclick="nextPage()">
+শেষ পেজ 💗
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PAGE 9 ================= -->
+
+<section class="page" id="page9">
+
+<div class="card">
+
+<div class="finalHeart">
+❤️
+</div>
+
+<h1>Adiba...</h1>
+
+<h2>Will You Stay?</h2>
+
+<p>
+
+ভালোবাসা তো তুমি জানোই...
+
+<br><br>
+
+এবার শুধু চাই—
+
+<br>
+
+<strong class="highlight">
+এই গল্পটা যেন
+এখানে শেষ না হয়।
+</strong>
+
+<br><br>
+
+আজ,
+আগামীকাল,
+আর তার পরের অনেকগুলো দিন...
+
+<br><br>
+
+<strong class="highlight">
+তুমি কি আমার পাশে থাকবে? 🥺❤️
+</strong>
+
+</p>
+
+<button onclick="answer()">
+হ্যাঁ ❤️
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- PAGE NUMBER -->
+
+<div class="number" id="number">
+01 / 09
+</div>
+
+
+
+<script>
+
+let current = 1;
+
+function nextPage(){
+
+    document
+    .getElementById("page" + current)
+    .classList.remove("active");
+
+    current++;
+
+    document
+    .getElementById("page" + current)
+    .classList.add("active");
+
+    document
+    .getElementById("number")
+    .innerText =
+    String(current).padStart(2,"0") + " / 09";
+
+}
+
+
+function answer(){
+
+    document.getElementById("page9").innerHTML = `
+
+    <div class="card">
+
+        <div class="finalHeart">
+            ❤️
+        </div>
+
+        <div class="small">
+        THEN LET'S KEEP THIS STORY
+        </div>
+
+        <h1>Adiba ❤️</h1>
+
+        <h2>একসাথে...</h2>
+
+        <p>
+
+        কোনো বড় promise নয়।
+
+        <br><br>
+
+        শুধু ছোট ছোট
+        ভালোবাসা,
+        <br>
+        ছোট ছোট অভিমান,
+        <br>
+        অনেক হাসি,
+
+        <br><br>
+
+        আর একে অপরকে
+        হারিয়ে না ফেলার চেষ্টা।
+
+        <br><br>
+
+        <strong class="highlight">
+        তুমি থাকলেই
+        গল্পটা সুন্দর। ❤️
+        </strong>
+
+        </p>
+
+        <div class="signature">
+        — তোমার মানুষটা 🌹
+        </div>
+
+    </div>
+
+    `;
+
+    document.getElementById("number")
+    .innerText = "❤️ / ❤️";
+
+}
+
+</script>
+
+</body>
+</html>
